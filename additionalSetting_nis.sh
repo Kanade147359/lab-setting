@@ -26,7 +26,7 @@ rpmbuild -bb rpmbuild/SPECS/authselect.spec
 sudo dnf reinstall -y rpmbuild/RPMS/x86_64/authselect-libs-1.2.6-2.el9.x86_64.rpm
 
 # authselect で NIS プロファイルを選択
-authselect select nis --force
+sudo authselect select nis --force
 
 # autofs のソース RPM のダウンロードとインストール
 curl -O http://dl.rockylinux.org/pub/rocky/9/devel/source/tree/Packages/a/autofs-5.1.7-58.el9.src.rpm
@@ -43,5 +43,9 @@ sudo dnf install -y nfs-utils
 
 # autofs の RPM のインストール
 sudo dnf localinstall -y rpmbuild/RPMS/x86_64/autofs-5.1.7-58.el9.x86_64.rpm
+
+# 不要なファイルを削除
+rm -f *.src.rpm
+rm -f *.tar.gz
 
 echo "すべての操作が完了しました！"

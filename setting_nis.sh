@@ -66,4 +66,9 @@ sudo dnf localinstall -y rpmbuild/RPMS/x86_64/ypbind-2.7.2-2.el9.x86_64.rpm \
                       rpmbuild/RPMS/x86_64/nss_nis-3.2-8.el9.x86_64.rpm  \
                       rpmbuild/RPMS/x86_64/yp-tools-4.2.3-2.el9.x86_64.rpm
 
+# 不要なファイルとディレクトリを削除
+rm -f *.src.rpm
+rm -f *.tar.gz
+rm -rf ypbind-mt libnss_nis
+
 echo "すべての操作が完了しました！"
